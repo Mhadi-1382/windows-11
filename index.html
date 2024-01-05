@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Windows 11 Redesign By Mohammad Mahdi Rabiee">
+        <meta name="keywords" content="Windows 11">
+        <meta name="theme-color" content="#000">
+
+        <!-- IMPORT CSS MAIN -->
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <!-- IMPORT FONT AWESOME -->
+        <link rel="stylesheet" type="text/css" href="fonts/css/fontawesome.min.css">
+        <link rel="stylesheet" type="text/css" href="fonts/css/all.min.css">
+
+        <!-- IMPORT FAVICON -->
+        <link rel="shortcut icon" href="imgs/icons/home.png" type="image/x-icon">
+        
+        <!-- TITLE -->
+        <title>Windows 11</title>
+    </head>
+    <body>
+
+        <!-- LOADER -->
+        <div class="loader-warpper" id="loader">
+            <img src="imgs/logo/microsoft.svg" alt=""  draggable="false" class="loader">
+            <div class="loader-progress">
+                <div class="loader-progress-circle"></div>
+            </div>
+        </div>
+
+
+        <!-- MAIN -->
+        <main>
+            <!-- TASKBAR -->
+            <div class="taskbar">
+                <div class="taskbar-warpper">
+                    <div class="task-center" id="taskCenterAnimation">
+                        <img src="imgs/icons/home.png" alt="" onclick="startMenu()" draggable="false" title="Start (alt+0)" accesskey="0">
+                        <img src="imgs/icons/search.png" alt="" draggable="false" title="Search">
+                        <img src="imgs/icons/explorer.png" alt="" draggable="false" title="File Explorer">
+                        <img src="imgs/icons/edge.png" alt="" draggable="false" title="Microsoft Edge">
+                        <img src="imgs/icons/winWord.png" alt="" draggable="false" title="Word">
+                        <img src="imgs/icons/powerpoint.png" alt="" draggable="false" title="Powerpoint">
+                        <img src="imgs/icons/github.png" alt="" draggable="false" title="Github">
+                        <img src="imgs/icons/code.png" alt="" draggable="false" title="Visual Studio Code">
+                        
+                        <span id="taskCenterAppAdd"></span>
+                    </div>
+                    <div>
+                        <div class="task-left" onclick="weather()" id="taskLeftAnimation">
+                            <img src="imgs/elements/sun-cloud.png" alt="" draggable="false">
+                            <p>20ºC Partly Cloudy</p>
+                        </div>
+                        <div class="task-right" id="taskRightAnimation">
+                            <li class="far fa-angle-up" onclick="hiddenIcon()" title="Show hidden icons"></li>
+                            <li class="far fa-volume" onclick="speakers()" title="Speakers"></li>
+                            <li class="far fa-wifi" onclick="network()" title="Network"></li>
+                            <div class="time-date" onclick="timeAndDate()" title="Date & Time">
+                                <h3 id="timeShow"></h3>
+                                <p id="dateShow"></p>
+                            </div>
+                            <li class="far fa-bell" onclick="notifications()" title="Notifications"></li>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- NOTIFICATIONS -->
+            <div class="notifications" id="notifications">
+                <div class="notifications-header">
+                    <h4>No new notifications</h4>
+                </div>
+                <div class="notifications-body">
+                    <div>
+                        <li class="far fa-map-marker"></li>
+                        <p>Location</p>
+                    </div>
+                    <div onclick="darkMode()">
+                        <li class="far fa-moon"></li>
+                        <p>Dark mode</p>
+                    </div>
+                    <div onclick="nightLight()">
+                        <li class="far fa-sun-dust"></li>
+                        <p>Night light</p>
+                    </div>
+                    <div>
+                        <li class="far fa-podcast"></li>
+                        <p>Mobile hotspot</p>
+                    </div>
+                    <div>
+                        <li class="far fa-plane"></li>
+                        <p>Airplane mode</p>
+                    </div>
+                    <div onclick="network()">
+                        <li class="far fa-wifi"></li>
+                        <p>Network</p>
+                    </div>
+                    <div>
+                        <li class="far fa-key"></li>
+                        <p>VPN</p>
+                    </div>
+                    <div>
+                        <li class="far fa-crop"></li>
+                        <p>Screenshot</p>
+                    </div>
+                </div>
+                <div class="notifications-footer">
+                    <li class="far fa-sun-alt"></li>
+                    <input type="range">
+                </div>
+            </div>
+
+            <!-- TIME & DATE -->
+            <div class="time-and-date" id="timeAndDate">
+                <div class="time-and-date-header">
+                    <div>
+                        <h4><a href="">Date & Time</a></h4>
+                        <p>Change settings, such as set the time and date.</p>
+                    </div>
+                    <div class="card-time">
+                        <h3 id="timeShowTaskbarOpen"></h3>
+                        <p id="dateShowTaskbarOpen"></p>
+                    </div>
+                </div>
+                <div class="time-and-date-body">
+                    <div class="time-and-date-body--header">
+                        <p>January 2024</p>
+                        <div>
+                            <li class="far fa-angle-up"></li>
+                            <li class="far fa-angle-down"></li>
+                        </div>
+                    </div>
+                    <div class="time-and-date-body--body">
+                        <div>
+                            <p>Su</p>
+                            <p>Mo</p>
+                            <p>Tu</p>
+                            <p>We</p>
+                            <p>Th</p>
+                            <p>Fr</p>
+                            <p>Sa</p>
+                        </div>
+                        <div>
+                            <p>31</p>
+                            <p>1</p>
+                            <p>2</p>
+                            <p>3</p>
+                            <p class="body--body-active">4</p>
+                            <p>5</p>
+                            <p>6</p>
+                        </div>
+                        <div>
+                            <p>7</p>
+                            <p>8</p>
+                            <p>9</p>
+                            <p>10</p>
+                            <p>11</p>
+                            <p>12</p>
+                            <p>13</p>
+                        </div>
+                        <div>
+                            <p>14</p>
+                            <p>15</p>
+                            <p>16</p>
+                            <p>17</p>
+                            <p>18</p>
+                            <p>19</p>
+                            <p>20</p>
+                        </div>
+                        <div>
+                            <p>21</p>
+                            <p>22</p>
+                            <p>23</p>
+                            <p>24</p>
+                            <p>25</p>
+                            <p>26</p>
+                            <p>27</p>
+                        </div>
+                        <div>
+                            <p>28</p>
+                            <p>29</p>
+                            <p>30</p>
+                            <p>31</p>
+                            <p>1</p>
+                            <p>2</p>
+                            <p>3</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- NETWORK -->
+            <div class="network" id="network">
+                <div class="network-header">
+                    <h4><a href="">Network & Internet settings</a></h4>
+                    <p>Change settings, such as making a connection metered.</p>
+                </div>
+                <div class="network-body">
+                    <div class="div-active">
+                        <li class="far fa-wifi"></li>
+                        <p>Wifi</p>
+                    </div>
+                    <div>
+                        <li class="far fa-bluetooth"></li>
+                        <p>Bluetooth</p>
+                    </div>
+                    <div>
+                        <li class="far fa-plane"></li>
+                        <p>Airplane mode</p>
+                    </div>
+                    <div>
+                        <li class="far fa-podcast"></li>
+                        <p>Mobile hotspot</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SPEAKERS -->
+            <div class="speakers" id="speakers">
+                <div class="speakers-header">
+                    <h4><a href="">Sound</a></h4>
+                    <p>Change settings, such as manage audio devices.</p>
+                </div>
+                <div class="speakers-footer">
+                    <li class="far fa-volume"></li>
+                    <input type="range" value="10">
+                </div>
+            </div>
+
+            <!-- HIDDEN ICON -->
+            <div class="hidden-icon" id="hiddenIcon">
+                <div class="hidden-icon-body">
+                    <img src="imgs/icons/oneDrive.png" alt="" title="One Drive">
+                    <img src="imgs/icons/security.png" alt="" title="Security">
+                    <img src="imgs/icons/alarm.png" alt="" title="Alarm">
+                </div>
+            </div>
+
+            <!-- WEATHER (IS EMPTY) -->
+            <div class="weather" id="weather"></div>
+
+            <!-- START MENU -->
+            <div class="start-menu" id="startMenu">
+                <div class="start-menu-header">
+                    <img src="imgs/avatar/avatar.png" alt="" draggable="false">
+                    <h3><span id="wishMeId"></span> Mahdi!</h3>
+                    <p>mrabiee175@gmail.com</p>
+                </div>
+                <div class="start-menu-body">
+                    <div class="start-menu-body--header">
+                        <h4>Most Used</h4>
+                        <button class="btn-start">All apps <span class="far fa-angle-right"></span></button>
+                    </div>
+                    <div class="start-menu-body--body">
+                        <div>
+                            <img src="imgs/icons/code.png" alt="">
+                            <p>VS Code</p>
+                        </div>
+                        <div>
+                            <img src="imgs/icons/edge.png" alt="">
+                            <p>MS Edge</p>
+                        </div>
+                        <div onclick="openTerminal()">
+                            <img src="imgs/icons/terminal.png" alt="">
+                            <p>Terminal</p>
+                        </div>
+                        <div>
+                            <img src="imgs/icons/github.png" alt="">
+                            <p>Github</p>
+                        </div>
+                        <div>
+                            <img src="imgs/icons/powerpoint.png" alt="">
+                            <p>Powerpoint</p>
+                        </div>
+                        <div>
+                            <img src="imgs/icons/settings.png" alt="">
+                            <p>Settings</p>
+                        </div>
+                        <div>
+                            <img src="imgs/icons/winWord.png" alt="">
+                            <p>Word</p>
+                        </div>
+                        <div>
+                            <img src="imgs/icons/groove.png" alt="">
+                            <p>Groove</p>
+                        </div>
+                        <div>
+                            <img src="imgs/icons/msoffice.png" alt="">
+                            <p>MS Office</p>
+                        </div>
+                        <div>
+                            <img src="imgs/icons/spotify.png" alt="">
+                            <p>Spotify</p>
+                        </div>
+                        <div>
+                            <img src="imgs/icons/weather.png" alt="">
+                            <p>Weather</p>
+                        </div>
+                        <div>
+                            <img src="imgs/icons/xbox.png" alt="">
+                            <p>Xbox</p>
+                        </div>
+                        <div>
+                            <img src="imgs/icons/cortana.png" alt="">
+                            <p>Cortana</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="start-menu-footer">
+                    <input type="search" placeholder="Search anything" aria-placeholder="Search anything">
+                    <div>
+                        <li class="far fa-file" title="Documents"></li>
+                        <li class="far fa-image" title="Pictures"></li>
+                        <li class="far fa-cog" title="Settings"></li>
+                        <li class="far fa-power-off" onclick="startMenuDropdownPower()" title="Power"></li>
+                    </div>
+
+                    <!-- START MENU DROPDOWN POWER -->
+                    <div class="start-menu-dropdown-power" id="startMenuDropdownPower">
+                        <p onclick="shutDown()" title="Closes all apps and turn off the PC."><span class="far fa-power-off"></span> Shut down</p>
+                        <p onclick="restart()" title="Closes all apps, turns off the PC, and then turns it on again."><span class="far fa-arrow-rotate-left"></span> Restart</p>
+                        <p onclick="sleep()" title="The PC stays on but uses low power. Apps stay open so when the PC wakes up, you're instantly back to where you left off."><span class="far fa-moon"></span> Sleep</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- SHUTDOWN -->
+        <div class="shutdown" id="shutDown">
+            <div class="shutdown-backgrund"></div>
+            <div>
+                <h4>Shutting down</h4>
+                <div class="loader-progress-circle"></div>
+            </div>
+        </div>
+        <!-- RESTART -->
+        <div class="restart" id="restart">
+            <div class="restart-backgrund"></div>
+            <div>
+                <h4>Restarting</h4>
+                <div class="loader-progress-circle"></div>
+            </div>
+        </div>
+        <!-- SLEEP -->
+        <div class="sleep" id="sleep">
+            <div class="sleep-backgrund"></div>
+            <div>
+                <h4>Sleeping</h4>
+                <div class="loader-progress-circle"></div>
+            </div>
+        </div>
+        <div class="sleep-warpper" id="sleepWarpper" onclick="sleep()">
+            <h4 id="sleepWarpperLoaderProgressCircleTxt">Please wait</h4>
+            <div class="loader-progress-circle" id="sleepWarpperLoaderProgressCircle"></div>
+        </div>
+
+        <!-- OPEN APP: TERMINAL -->
+        <div class="terminal" id="openTerminal">
+            <div class="terminal-header">
+                <div>
+                    <img src="imgs/icons/terminal.png" alt="" draggable="false">
+                    <p>Terminal</p>
+                </div>
+                <div>
+                    <span title="Minimize"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" preserveAspectRatio="xMidYMid meet" version="1.1" viewBox="0 0 640 450" xmlnsXlink="http://www.w3.org/1999/xlink"><defs><path id="c9ABkuGXV0" d="M598.24 269.13C606.62 269.13 613.42 275.93 613.42 284.31C613.42 288.56 613.42 286.12 613.42 290.37C613.42 298.75 606.62 305.54 598.24 305.54C486.05 305.54 164.66 305.54 52.47 305.54C44.09 305.54 37.29 298.75 37.29 290.37C37.29 286.12 37.29 288.56 37.29 284.31C37.29 275.93 44.09 269.13 52.47 269.13C164.66 269.13 486.05 269.13 598.24 269.13Z"/></defs><g><g><g><use fill="#000" fill-opacity="1" href="#c9ABkuGXV0" opacity="1"/><g><use fill-opacity="0" stroke="#4fad6d" stroke-opacity="1" stroke-width="0" href="#c9ABkuGXV0" opacity="1"/></g></g></g></g></svg></span>
+                    <span title="Maximize"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="none" viewBox="0 0 48 48"><path fill="#000" d="M6 11.25C6 8.35051 8.3505 6 11.25 6H36.75C39.6495 6 42 8.3505 42 11.25V36.75C42 39.6495 39.6495 42 36.75 42H11.25C8.35051 42 6 39.6495 6 36.75V11.25ZM11.25 8.5C9.73122 8.5 8.5 9.73122 8.5 11.25V36.75C8.5 38.2688 9.73122 39.5 11.25 39.5H36.75C38.2688 39.5 39.5 38.2688 39.5 36.75V11.25C39.5 9.73122 38.2688 8.5 36.75 8.5H11.25Z"/></svg></span>
+                    <li class="far fa-close" onclick="openTerminal()" title="Close"></li>
+                </div>
+            </div>
+            <div class="terminal-body">
+                <div>
+                    <p>Microsoft Windows [Version 10.0.19045.3570]</p>
+                    <p>(c) Microsoft Corporation. All rights reserved.</p>
+                </div>
+                <div>
+                    <span><textarea name="" id="" rows="1" autofocus></textarea></span>
+                </div>
+            </div>
+        </div>
+
+
+
+        <!-- IMPORT JS -->
+        <script src="js/app.js"></script>
+    
+    </body>
+</html>
