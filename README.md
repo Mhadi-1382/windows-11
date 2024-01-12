@@ -9,8 +9,7 @@
 
 <img src="https://github.com/Mhadi-1382/windows-11/blob/master/Windows_11_Cover.png" alt="windows-11" description="Be organized, record your ideas on Pinboard.">
 
-**Redesign Windows 11<br><br>
-This project will be updated in the near future.**
+**Redesign Windows 11**
 
 ***
 
